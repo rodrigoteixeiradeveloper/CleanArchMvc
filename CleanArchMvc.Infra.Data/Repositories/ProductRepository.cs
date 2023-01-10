@@ -24,16 +24,6 @@ namespace CleanArchMvc.Infra.Data.Repositories
 
         public async Task<Product> GetById(int? id)
         {
-            var product = await _productContext.Products.FindAsync(id);
-            if (product == null)
-                throw new Exception("Not found");
-
-            return product;
-        }
-
-        public async Task<Product> GetProductWithCategory(int? id)
-        {
-            //eager loading
             var product = await _productContext.Products
                 .Include(c => c.Category)
                 .SingleOrDefaultAsync(p => p.Id == id);
