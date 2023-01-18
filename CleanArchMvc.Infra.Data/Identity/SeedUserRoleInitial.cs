@@ -19,7 +19,7 @@ namespace CleanArchMvc.Infra.Data.Identity
 
         public void SeedUsers()
         {
-            if(_userManager.FindByEmailAsync("usuario@localhost").Result != null )
+            if(_userManager.FindByEmailAsync("usuario@localhost").Result == null )
             {
                 ApplicationUser user = new ApplicationUser();
 
@@ -39,7 +39,7 @@ namespace CleanArchMvc.Infra.Data.Identity
                 }
             }
 
-            if (_userManager.FindByEmailAsync("admin@localhost").Result != null)
+            if (_userManager.FindByEmailAsync("admin@localhost").Result == null)
             {
                 ApplicationUser user = new ApplicationUser();
 
