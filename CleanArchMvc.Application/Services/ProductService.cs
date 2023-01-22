@@ -39,8 +39,8 @@ namespace CleanArchMvc.Application.Services
         {
             var productByIdQuery = new GetProductByIdQuery(id.Value);
 
-            if (productByIdQuery == null)
-                throw new Exception($"Entity could not be loaded.");
+            //if (productByIdQuery == null)
+                //throw new Exception($"Entity could not be loaded.");
 
             var result = await _mediator.Send(productByIdQuery);
 

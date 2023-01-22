@@ -24,8 +24,8 @@ namespace CleanArchMvc.Infra.Data.Repositories
         public async Task<Category> GetById(int? id)
         {
             var category = await _categoryContext.Categories.FindAsync(id);
-            if (category == null)
-                throw new Exception("Not found");
+            //if (category == null)
+                //throw new Exception("Not found");
 
             return category;
         }
